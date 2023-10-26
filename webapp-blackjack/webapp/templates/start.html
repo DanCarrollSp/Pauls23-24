@@ -10,7 +10,7 @@
     <p>{{ dealer_total }}</p>
 -->
 
-
+<div id="my-container">
 <!-- Dealer messages and imgs -->
 <h1>Dealer Cards</h1>
     <!-- Shows dealers total if player stands or busts-->
@@ -53,22 +53,35 @@
     {% endif %}
 
 
-<div >
+<div id="center">
     {% if show_hit_and_stand is not defined %}
-    <form action="/stand" method="post" class="stand_button">
+    <form hx-post="/stand" method="post" hx-swap="outerHTML" hx-target="#my-container" class="stand_button">
         <input type="submit" value="Stand"/>
     </form>
 
-    <form action="/hit" method="post" class="hit_button">
+    <form hx-post="/hit" method="post" hx-swap="outerHTML" hx-target="#my-container" class="hit_button">
         <input type="submit" value="Hit"/>
     </form>
     {% endif %}
 
+
     {% if dealer_total_text is defined %}
-    <form action="/start" method="get" class="reset_button">
+    <form action="/start" method="get" hx-get="/start" hx-swap="outerHTML" hx-target="#my-container" class="reset_button">
         <input type="submit" value="Play Again"/>
     </form>
     {% endif %}
+
+
+
+
+    <!--    
+    {% if dealer_total_text is defined %}
+    <form action="/start" method="get" hx-post="/start" hx-swap="outerHTML" hx-target="#my-container">
+        <input type="submit" value="Play Again"/>
+    </form>
+    {% endif %}
+    -->
+
 </div>
 
 
@@ -84,6 +97,6 @@
         <img src="static/cards/{{ card[-1][-1] }}" id="img_player_cards"/>
     {% endfor %}
     </p>
-    
+</div>
 
 {% endblock %} 

@@ -22,10 +22,7 @@ body
     margin-bottom: -5%;
 }
 
-#Dealer_Totals_Text
-{
-    
-}
+
 
 #Player_Cards_Text
 {
@@ -34,10 +31,6 @@ body
     
 }
 
-#Player_Totals_Text
-{
-
-}
 
 .stand_button input[type="submit"]
 {
@@ -136,7 +129,7 @@ p {
     text-align: center; /* Center-align the text */
 }
 
-div
+#center
 {
     display: flex;
     justify-content: center; /* Center horizontally */
