@@ -38,6 +38,7 @@
     </p>
     <h3>Total for the player is: {{ player_total }}</h3>
 
+    {% if show_hit_and_stand is not defined %}
     <form action="/stand" method="post">
         <input type="submit" value="Stand"/>
     </form>
@@ -45,6 +46,13 @@
     <form action="/hit" method="post">
         <input type="submit" value="Hit"/>
     </form>
+    {% endif %}
+
+    {% if dealer_total_text is defined %}
+    <form action="/start" method="get">
+        <input type="submit" value="Play Again"/>
+    </form>
+    {% endif %}
 
 
     <!-- Shows Win messages! -->

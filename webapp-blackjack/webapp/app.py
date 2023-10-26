@@ -134,6 +134,7 @@ def over_to_the_dealer():
         "dealer_cards": session["dealer"],
         "dealer_total": calc_total(session["dealer"]),
         "dealer_total_text": calc_total(session["dealer"]),
+        "show_hit_and_stand" : False,
         "title": "",
         "header": "",
         "footer": "",
@@ -159,6 +160,10 @@ def select_another_card():
 
     ##Global variables
     global stood
+
+    global playerWon
+    global dealerWon
+    global drawGame
     
     ##Gets card value totals
     player_value = calc_total(session["player"])
@@ -169,29 +174,21 @@ def select_another_card():
 
 
     ##With dealer calc total
-    if(stood == False):
-        return render_template(
-        "start.html",
-        player_cards=session["player"],
-        player_total=calc_total(session["player"]),
-        dealer_cards=session["dealer"],
-        dealer_total=calc_total(session["dealer"]),
-        title="",
-        header="",
-        footer=""
-    ) 
-    else:##Without dealer calc total
-        return render_template(
-        "start.html",
-        player_cards=session["player"],
-        player_total=calc_total(session["player"]),
-        dealer_cards=session["dealer"],
-        dealer_total=calc_total(session["dealer"]),
-        dealer_total_text=calc_total(session["dealer"]),
-        title="",
-        header="",
-        footer="",
-    )
+    common_data = {
+        "player_cards": session["player"],
+        "player_total": calc_total(session["player"]),
+        "dealer_cards": session["dealer"],
+        "dealer_total": calc_total(session["dealer"]),
+        "title": "",
+        "header": "",
+        "footer": "",
+    }
+
+    if not stood:
+        return render_template("start.html", **common_data)
+    else:  # Without dealer calc total
+        common_data["dealer_total_text"] = calc_total(session["dealer"])
+        return render_template("start.html", **common_data)
 ##########################################################################################################################################
 
 
