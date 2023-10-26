@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<!--
+    <p>{{ player_cards }}</p> 
+    <p>{{ player_total }}</p>
+    <hr>
+    <p>{{ dealer_cards }}</p> 
+    <p>{{ dealer_total }}</p>
+-->
+
+<h1>Dealer Cards</h1>
+    <p>
+        <!-- Shows dealers starting cards until player stands or busts -->
+        {% if dealer_total_text is not defined %}
+        <img src="static/cards/{{ dealer_cards[0][-1][-1] }}"/>
+        <img src="static/cards/back.png"/>
+        {% endif %}
+
+        <!-- Shows all dealer cards if player stands or busts -->
+        {% if dealer_total_text is defined %}
+        {% for card in dealer_cards %}
+        <img src="static/cards/{{ card[-1][-1] }}"/>
+        {% endfor %}
+        {% endif %}
+    </p>
+    <!-- Shows dealers total if player stands or busts-->
+    {% if dealer_total_text is defined %}
+    <h3 id="dealer_total_text">Total for the dealer is: {{ dealer_total }}</h3>
+    {% endif %}
+
+<h1>Player Cards</h1>
+    <p>
+    {% for card in player_cards %}
+        <img src="static/cards/{{ card[-1][-1] }}"/>
+    {% endfor %}
+    </p>
+    <h3>Total for the player is: {{ player_total }}</h3>
+
+    <form action="/stand" method="post">
+        <input type="submit" value="Stand"/>
+    </form>
+
+    <form action="/hit" method="post">
+        <input type="submit" value="Hit"/>
+    </form>
+
+
+
+{% endblock %} 
