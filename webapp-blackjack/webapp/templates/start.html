@@ -47,5 +47,15 @@
     </form>
 
 
+    <!-- Shows Win messages! -->
+    {% if player_won is defined %}
+    <h1>Player won!</h1>
+    {% endif %}
+    {% if dealer_won is defined %}
+    <h1>Dealer won!</h1>
+    {% endif %}
+    {% if draw_game is defined %}
+    <h1>Draw Game!</h1>
+    {% endif %}
 
 {% endblock %} 
