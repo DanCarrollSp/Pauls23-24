@@ -10,60 +10,80 @@
     <p>{{ dealer_total }}</p>
 -->
 
+
+<!-- Dealer messages and imgs -->
 <h1>Dealer Cards</h1>
+    <!-- Shows dealers total if player stands or busts-->
+    {% if dealer_total_text is defined %}
+    <h3 id="Dealer_Totals_Text">Total for the dealer is: {{ dealer_total }}</h3>
+    {% endif %}
+    {% if dealer_total_text is not defined %}
+    <h3 id="Dealer_Totals_Text">Total for the dealer is unkown</h3>
+    {% endif %}
+
     <p>
         <!-- Shows dealers starting cards until player stands or busts -->
         {% if dealer_total_text is not defined %}
-        <img src="static/cards/{{ dealer_cards[0][-1][-1] }}"/>
-        <img src="static/cards/back.png"/>
+        <img src="static/cards/{{ dealer_cards[0][-1][-1] }}" id="img_dealer_cards"/>
+        <img src="static/cards/back.png" id="img_dealer_cards"/>
         {% endif %}
 
         <!-- Shows all dealer cards if player stands or busts -->
         {% if dealer_total_text is defined %}
         {% for card in dealer_cards %}
-        <img src="static/cards/{{ card[-1][-1] }}"/>
+        <img src="static/cards/{{ card[-1][-1] }}" id="img_dealer_cards"/>
         {% endfor %}
         {% endif %}
     </p>
-    <!-- Shows dealers total if player stands or busts-->
-    {% if dealer_total_text is defined %}
-    <h3 id="dealer_total_text">Total for the dealer is: {{ dealer_total }}</h3>
+
+
+
+
+
+
+    <!-- Shows Win messages! -->
+    {% if player_won is defined %}
+    <h1 id="win_message">Player won!</h1>
+    {% endif %}
+    {% if dealer_won is defined %}
+    <h1 id="win_message">Dealer won!</h1>
+    {% endif %}
+    {% if draw_game is defined %}
+    <h1 id="win_message">Draw Game!</h1>
     {% endif %}
 
-<h1>Player Cards</h1>
-    <p>
-    {% for card in player_cards %}
-        <img src="static/cards/{{ card[-1][-1] }}"/>
-    {% endfor %}
-    </p>
-    <h3>Total for the player is: {{ player_total }}</h3>
 
+<div >
     {% if show_hit_and_stand is not defined %}
-    <form action="/stand" method="post">
+    <form action="/stand" method="post" class="stand_button">
         <input type="submit" value="Stand"/>
     </form>
 
-    <form action="/hit" method="post">
+    <form action="/hit" method="post" class="hit_button">
         <input type="submit" value="Hit"/>
     </form>
     {% endif %}
 
     {% if dealer_total_text is defined %}
-    <form action="/start" method="get">
+    <form action="/start" method="get" class="reset_button">
         <input type="submit" value="Play Again"/>
     </form>
     {% endif %}
+</div>
 
 
-    <!-- Shows Win messages! -->
-    {% if player_won is defined %}
-    <h1>Player won!</h1>
-    {% endif %}
-    {% if dealer_won is defined %}
-    <h1>Dealer won!</h1>
-    {% endif %}
-    {% if draw_game is defined %}
-    <h1>Draw Game!</h1>
-    {% endif %}
+
+
+
+<!-- Player messages and imgs -->
+<h1 id="Player_Cards_Text">Player Cards</h1>
+<h3 id="Player_Totals_Text">Total for the player is: {{ player_total }}</h3>
+
+    <p>
+    {% for card in player_cards %}
+        <img src="static/cards/{{ card[-1][-1] }}" id="img_player_cards"/>
+    {% endfor %}
+    </p>
+    
 
 {% endblock %} 

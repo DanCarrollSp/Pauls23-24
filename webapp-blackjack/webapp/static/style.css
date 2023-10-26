@@ -1,0 +1,165 @@
+
+/* Background img */
+body 
+{
+    background-image: url('assets/blackjack_table.png');
+    background-size: cover;
+}
+
+/* Apply styles to dealer <img> elements */
+#img_dealer_cards 
+{
+    max-width: 8%;
+    height: auto;
+}
+
+/* Apply styles to player <img> elements */
+#img_player_cards 
+{
+    max-width: 8%;
+    height: auto;
+
+    margin-bottom: -5%;
+}
+
+#Dealer_Totals_Text
+{
+    
+}
+
+#Player_Cards_Text
+{
+    text-align: center;
+
+    
+}
+
+#Player_Totals_Text
+{
+
+}
+
+.stand_button input[type="submit"]
+{
+    margin-right: 5%;
+
+    font-size:20px;
+    font-family:Arial;
+    width:140px;
+    height:55px;
+    border-width:2px;
+    color:rgba(255, 255, 0, 1);
+    border-color:rgba(0, 0, 0, 1);
+    font-weight:bold;
+    border-top-left-radius:12px;
+    border-top-right-radius:12px;
+    border-bottom-left-radius:12px;
+    border-bottom-right-radius:12px;
+    box-shadow:inset 5px 1px 0px 0px rgba(78, 252, 5, 0);
+    background:linear-gradient(rgba(92, 192, 48, 1), rgba(93, 156, 62, 1));
+}
+.stand_button input[type="submit"]:hover {
+    background: linear-gradient(rgba(93, 156, 62, 1), rgba(92, 192, 48, 1));
+  }
+
+.hit_button input[type="submit"]
+{
+    margin-left: 5%;
+
+    font-size:20px;
+    font-family:Arial;
+    width:140px;
+    height:55px;
+    border-width:2px;
+    color:rgba(255, 255, 0, 1);
+    border-color:rgba(0, 0, 0, 1);
+    font-weight:bold;
+    border-top-left-radius:12px;
+    border-top-right-radius:12px;
+    border-bottom-left-radius:12px;
+    border-bottom-right-radius:12px;
+    box-shadow:inset 5px 1px 0px 0px rgba(78, 252, 5, 0);
+    background:linear-gradient(rgba(92, 192, 48, 1), rgba(93, 156, 62, 1));
+}
+.hit_button input[type="submit"]:hover {
+    background: linear-gradient(rgba(93, 156, 62, 1), rgba(92, 192, 48, 1));
+  }
+
+.reset_button input[type="submit"]
+{
+    font-size:20px;
+    font-family:Arial;
+    width:140px;
+    height:55px;
+    border-width:2px;
+    color:rgba(255, 255, 0, 1);
+    border-color:rgba(0, 0, 0, 1);
+    font-weight:bold;
+    border-top-left-radius:12px;
+    border-top-right-radius:12px;
+    border-bottom-left-radius:12px;
+    border-bottom-right-radius:12px;
+    box-shadow:inset 5px 1px 0px 0px rgba(78, 252, 5, 0);
+    background:linear-gradient(rgba(92, 192, 48, 1), rgba(93, 156, 62, 1));
+}
+.reset_button input[type="submit"]:hover {
+    background: linear-gradient(rgba(93, 156, 62, 1), rgba(92, 192, 48, 1));
+  }
+
+
+
+
+
+
+
+#win_message
+{
+    margin-top: 2.5%;
+    font-size: 50px;
+    color: gold;
+}
+
+
+h1 {
+    text-align: center; /* Center-align the text */
+}
+
+h3 {
+    font-size: 24px;
+    text-align: center; /* Center-align the text */
+}
+
+p {
+    text-align: center; /* Center-align the text */
+}
+
+div
+{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+  }
+
+
+
+
+  .buttonClass {
+    font-size:15px;
+    font-family:Arial;
+    width:140px;
+    height:50px;
+    border-width:1px;
+    color:#fff;
+    border-color:rgba(0, 0, 0, 1);
+    font-weight:bold;
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    box-shadow:inset 0px 1px 0px 0px rgba(78, 252, 5, 0);
+    background:linear-gradient(rgba(98, 214, 47, 1), rgba(98, 170, 63, 1));
+  }
+  
+  .buttonClass:hover {
+    background: linear-gradient(rgba(98, 170, 63, 1), rgba(98, 214, 47, 1));
+  }
