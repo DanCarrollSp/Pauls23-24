@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<!--
+    <p>{{ player_cards }}</p> 
+    <p>{{ player_total }}</p>
+    <hr>
+    <p>{{ dealer_cards }}</p> 
+    <p>{{ dealer_total }}</p>
+-->
+
+<div>
+<!-- Dealer messages and imgs -->
+<h1>Dealer Cards</h1>
+    <!-- Shows dealers total if player stands or busts-->
+    {% if dealer_total_text is defined %}
+    <h3>Total for the dealer is: {{ dealer_total }}</h3>
+    {% endif %}
+    {% if dealer_total_text is not defined %}
+    <h3>Total for the dealer is unkown</h3>
+    {% endif %}
+
+    <p>
+        <!-- Shows dealers starting cards until player stands or busts -->
+        {% if dealer_total_text is not defined %}
+        <img src="static/cards/{{ dealer_cards[0][-1][-1] }}" id="img_dealer_cards"/>
+        <img src="static/cards/back.png" id="img_dealer_cards"/>
+        {% endif %}
+
+        <!-- Shows all dealer cards if player stands or busts -->
+        {% if dealer_total_text is defined %}
+        {% for card in dealer_cards %}
+        <img src="static/cards/{{ card[-1][-1] }}" id="img_dealer_cards"/>
+        {% endfor %}
+        {% endif %}
+    </p>
+
+
+
+
+
+
+    <!-- Shows Win messages! -->
+    {% if player_won is defined %}
+    <h1>Player won!</h1>
+    {% endif %}
+    {% if dealer_won is defined %}
+    <h1>Dealer won!</h1>
+    {% endif %}
+    {% if draw_game is defined %}
+    <h1>Draw Game!</h1>
+    {% endif %}
+
+
+<div id="center">
+    {% if show_hit_and_stand is not defined %}
+    <form action="/stand" method="post">
+        <input type="submit" value="Stand"/>
+    </form>
+
+    <form action="/hit" method="post">
+        <input type="submit" value="Hit"/>
+    </form>
+    {% endif %}
+
+
+    {% if dealer_total_text is defined %}
+    <form action="/start" method="get" get="/start">
+        <input type="submit" value="Play Again"/>
+    </form>
+    {% endif %}
+
+
+
+
+    <!--    
+    {% if dealer_total_text is defined %}
+    <form action="/start" method="get" hx-post="/start" hx-swap="outerHTML" hx-target="#my-container">
+        <input type="submit" value="Play Again"/>
+    </form>
+    {% endif %}
+    -->
+
+</div>
+
+
+
+
+
+<!-- Player messages and imgs -->
+<h1 id="Player_Cards_Text">Player Cards</h1>
+<h3 id="Player_Totals_Text">Total for the player is: {{ player_total }}</h3>
+
+    <p>
+    {% for card in player_cards %}
+        <img src="static/cards/{{ card[-1][-1] }}" id="img_player_cards"/>
+    {% endfor %}
+    </p>
+</div>
+
+{% endblock %} 
