@@ -1,0 +1,8 @@
+    <p>
+        {% for card in player_cards %}
+            <img src="static/cards/{{ card[-1][-1] }}"/>
+        {% endfor %}
+    </p>
+    {% block extramessage %}
+        <h3>Player score: {{ player_total }}.</h3>
+    {% endblock %}    
