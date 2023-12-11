@@ -57,20 +57,19 @@ def display_opening_state():
     session["deck"] = make_deck()
 
     ######## My saving data code #########
+
     if "attempts" not in session:
-    session["attempts"] = 0
+        session["attempts"] = 0
 
     if "wins" not in session:
         session["wins"] = 0
 
     if "outcome" not in session:
         session["outcome"] = "null"
-
+    
     ####
-
+    if(session["attempts"] > 0): session["save"] = save_game_data("frodo", session["outcome"], session["attempts"], session["wins"])
     session["attempts"] += 1
-
-    session["save"] = save_game_data("frodo", session["outcome"], session["attempts"], session["wins"])
     ######################################
 
     session["player"] = []
