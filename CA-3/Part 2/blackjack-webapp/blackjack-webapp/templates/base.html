@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {{ title }}
+        </title>
+
+        <link rel="stylesheet" type="text/css" href="static/Assets/style.css">
+        <script src="static/js/htmx.min.js"></script>
+
+        <style>
+            img {
+              width: 8%;
+              height: 8%;
+            }
+            h3 {
+              color: blue;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>{{ header }}</h1>
+
+        {% block body %}
+        {% endblock %}
+
+        <h2>{{ footer }}</h2>
+    </body>
+</html>

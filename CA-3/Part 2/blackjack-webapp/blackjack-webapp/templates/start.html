@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<h2>Dealer Cards</h2>
+    <p>
+        {% block dealers_cards %}
+
+            <div id="dealercards">
+                <img src="static/cards/{{ dealer_cards[0][-1][-1] }}"/>
+                <img src="static/cards/back.png"/>
+            </div>
+        
+        {% endblock %}
+    </p>
+
+<h2>Player Cards</h2>
+    <div id="playercards">
+        <p>
+            {% for card in player_cards %}
+                <img src="static/cards/{{ card[-1][-1] }}"/>
+            {% endfor %}
+        </p>
+        <h3>Player score: {{ player_total }}</h3>
+    </div>
+
+    <div>
+        <button hx-post="/stand" hx-target="#dealercards" hx-swap="innerHTML" id="standbtn">
+            Stand!
+        </button>
+
+        <button hx-post="/hit" hx-target="#playercards" hx-swap="innerHTML" id="hitbtn">
+            Hit!
+        </button>
+
+    </div>
+    <div id="resetbox">
+    
+        <form action="/start" method="get" id="resetbtn">
+            <input type="submit" value="Start Again..." id="resetbtn"/>
+        </form>
+    </div>
+{% endblock %} 

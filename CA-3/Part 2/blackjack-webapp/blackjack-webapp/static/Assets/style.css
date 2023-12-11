@@ -1,0 +1,128 @@
+
+/* Background img */
+body 
+{
+    background-image: url('/static/Assets/blackjack_table.png');
+    background-size: cover;
+}
+
+
+#dealercards
+{
+    text-align: center;
+}
+#playercards
+{
+    text-align: center;
+}
+
+
+
+#standbtn 
+{
+    font-size: 20px;
+    font-family: Arial;
+    width: 140px;
+    height: 55px;
+    border-width: 2px;
+    color: rgba(255, 255, 0, 1);
+    border-color: rgba(0, 0, 0, 1);
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: inset 5px 1px 0px 0px rgba(78, 252, 5, 0);
+    background: linear-gradient(rgba(92, 192, 48, 1), rgba(93, 156, 62, 1));
+}
+#standbtn:hover 
+{
+    background: linear-gradient(rgba(93, 156, 62, 1), rgba(92, 192, 48, 1));
+}
+
+#hitbtn 
+{
+    font-size: 20px;
+    font-family: Arial;
+    width: 140px;
+    height: 55px;
+    border-width: 2px;
+    color: rgba(255, 255, 0, 1);
+    border-color: rgba(0, 0, 0, 1);
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: inset 5px 1px 0px 0px rgba(78, 252, 5, 0);
+    background: linear-gradient(rgba(92, 192, 48, 1), rgba(93, 156, 62, 1));
+}
+#hitbtn:hover 
+{
+    background: linear-gradient(rgba(93, 156, 62, 1), rgba(92, 192, 48, 1));
+}
+
+#resetbtn,
+form,
+input
+{
+    display: inline-block;
+    font-size: 20px;
+    font-family: Arial;
+    width: 140px;
+    height: 55px;
+    border-width: 2px;
+    color: rgba(255, 255, 0, 1);
+    border-color: rgba(0, 0, 0, 1);
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: inset 5px 1px 0px 0px rgba(78, 252, 5, 0);
+    background: linear-gradient(rgba(92, 192, 48, 1), rgba(93, 156, 62, 1));
+
+}
+#resetbtn:hover,
+form:hover,
+input:hover 
+{
+    background: linear-gradient(rgba(93, 156, 62, 1), rgba(92, 192, 48, 1));
+}
+
+
+
+h1 {
+    text-align: center; /* Center-align the text */
+
+    font-size:30px;
+    font-family:Arial;
+}
+
+h2 {
+    text-align: center; /* Center-align the text */
+}
+
+h3 {
+    font-size: 24px;
+    text-align: center; /* Center-align the text */
+}
+
+p
+{
+    text-align: center; /* Center-align the text */
+}
+
+div
+{
+    text-align: center; /* Center-align the text */
+}
+
+#resetbox
+{
+    margin-top: 10px;
+}
+
+
+
+
